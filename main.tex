@@ -1,0 +1,114 @@
+\newif\ifDRAFT
+\DRAFTtrue
+%\DRAFTfalse
+
+\ifDRAFT
+\documentclass[review,number,sort&compress,12pt]{elsarticle}
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+\usepackage{lineno}
+\modulolinenumbers[5]
+\newcommand{\picwidth}{0.9\textwidth}
+\linenumbers
+\else 
+\documentclass[final,5p,11pt,twocolumn]{elsarticle}
+\newcommand{\picwidth}{0.48\textwidth}
+\fi
+
+\usepackage{algorithm,algorithmic}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{booktabs,tabularx}
+\usepackage{threeparttable}
+
+\DeclareMathOperator{\argmaxH}{argmax} 
+\DeclareMathOperator*{\argmin}{argmin}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand\abs[1]{\left|#1\right|}
+
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+\journal{Annals of Nuclear Energy}
+\begin{document}
+\setcitestyle{square}
+%------------------------------------------------------------------------------
+% 
+%------------------------------------------------------------------------------
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+
+\title{}
+%% \tnotetext[label1]{}
+\author[focal]{Rabab Elzohery\corref{cor}}
+\ead{Rababelzohery@ksu.edu}
+%\ead{http://www.rine.u-fukui.ac.jp}
+\author{Jeremy Roberts}
+%% \fntext[label2]{}
+\cortext[cor1]{Corresponding author}
+\address {The Alan Levin Department of Mechanical and Nuclear Engineering,
+	Kansas State University \\
+	3002 Rathbone Hall, Manhattan, KS 66506, US \\ rababelzohery@ksu.edu, jaroberts@ksu.edu}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+%------------------------------------------------------------------------------
+% 
+%------------------------------------------------------------------------------
+\begin{abstract}
+
+\end{abstract}
+
+%------------------------------------------------------------------------------
+% 
+%------------------------------------------------------------------------------
+\begin{keyword}
+	Reduced-Order Models; POD-Galerkin Projection; Discrete Empirical Interpolation Method; Non-linear Neutronic Transients
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+%------------------------------------------------------------------------------
+% 
+%------------------------------------------------------------------------------
+%\linenumbers
+
+%------------------------------------------------------------------------------
+%% main text
+%------------------------------------------------------------------------------
+\section{Introduction\label{sect::intro}}
+
+%--------------------------------------------------------------------------------------------------%
+
+\section*{References}
+
+\bibliography{mybibfile}
+
+%%----------------------------------------------
+\end{document}
